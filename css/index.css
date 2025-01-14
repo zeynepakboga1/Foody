@@ -1,0 +1,109 @@
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.text h1 {
+  font-size: 36px;
+  color: #333;
+  margin: 0;
+}
+
+.text p {
+  font-size: 16px;
+  color: #666;
+  margin: 20px 0;
+}
+
+.text button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #f77f00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.text button:hover {
+  background-color: #ff8c42;
+}
+/* Görsel Döngüsü */
+.image-carousel {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.rotating-images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotate 12s linear infinite;
+  transform-origin: center;
+}
+
+.rotating-images img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fade 12s linear infinite;
+}
+
+.rotating-images img:nth-child(1) {
+  animation-delay: 0s;
+}
+.rotating-images img:nth-child(2) {
+  animation-delay: 3s;
+}
+.rotating-images img:nth-child(3) {
+  animation-delay: 6s;
+}
+
+/* Animasyonlar */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

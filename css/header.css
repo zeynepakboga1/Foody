@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5deb3;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between; /* Öğeler arası boşlukları yayar */
+  padding: 10px 20px; /* İç boşluk */
+  border-bottom: 1px solid #ccc; /* Alt çizgi */
+}
+.logo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #ff4500;
+  font-weight: bold;
+  font-size: 20px;
+}
+.logo b {
+  color: #696969;
+  font-size: 33px;
+}
+.nav {
+  margin: 0px;
+  padding: 0px;
+  background-color: none;
+  /*nav çubuğu */
+}
+/* Menü */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: orangered;
+  font-size: 1rem;
+  transition: color 0.3s;
+  display: inline-block;
+  position: relative;
+  padding: 5px 0;
+}
+
+nav ul li a:hover {
+  color: #ffa500; /* Menüde turuncu vurgusu */
+}
+
+/* Kayma Çizgisi Efekti */
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #ffa500;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Alt Menü */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%; /* EKLENDİ: Alt menü ana menünün hemen altında */
+  left: 0; /* EKLENDİ: Ana menüye hizalama */
+  background-color: #fff;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* EKLENDİ: Alt menünün diğer öğelerin üstünde olması için */
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul ul li a {
+  padding: 5px 10px; /* EKLENDİ: Alt menü öğelerine iç boşluk sağlandı */
+  white-space: nowrap; /* EKLENDİ: Uzun metinlerin alt satıra taşınması engellendi */
+}
+
+nav ul ul li a:hover {
+  color: #ff6b6b;
+}
+/* Kimlik Doğrulama Düğmeleri Konteyneri */
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0; /* Üst ve alt boşluk */
+}
+
+/* Genel Input Düğmesi Stili */
+.auth-buttons input[type="submit"] {
+  padding: 5px 20px; /* Düğme içindeki boşluk */
+  font-size: 16px; /* Yazı tipi boyutu */
+  font-weight: bold; /* Yazı tipi kalınlığı */
+  border-radius: 15px; /* Yuvarlak köşe */
+  color: #696969; /* Yazı rengi */
+  cursor: pointer; /* İmleç işareti */
+  transition: all 0.3s ease; /* Yumuşak geçiş efekti */
+  margin: 0; /* Butonlar arasındaki boşluğu sıfırlar */
+}
+
+/* Hover Durumu */
+.auth-buttons input[type="submit"]:hover {
+  background-color: white; /* Arka plan rengini beyaz yapar */
+  color: #696969; /* Yazı rengini mavi yapar */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Hafif gölge efekti */
+}
+
+/* Aktif Durum */
+.auth-buttons input[type="submit"]:active {
+  transform: scale(0.98); /* Düğme tıklandığında küçülür */
+}
+
+/* Farklı Butonlar İçin Renk Farkı */
+#signup {
+  background-color: #e89e6f;
+}
+
+#signup:hover {
+  background-color: #fbceb1;
+}
+
+#login {
+  background-color: #fbceb1;
+}
+
+#login:hover {
+  background-color: #e89e6f;
+}
